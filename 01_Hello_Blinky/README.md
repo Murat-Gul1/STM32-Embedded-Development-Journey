@@ -20,7 +20,7 @@ The goal of this project is to understand the basics of GPIO (General Purpose In
 
 ## 📺 Project Demo
 *(Optional: You can add your LinkedIn video link or a GIF here)*
-[Watch the Animation in Action]([https://www.youtube.com/shorts/YwHq0zjWtAU])
+[Watch the Animation in Action](https://www.youtube.com/shorts/YwHq0zjWtAU)
 
 ## 💻 Technical Snippet
 In this project, I used the `HAL_GPIO_TogglePin` and `HAL_Delay` functions to create the timing for the flasher effect:
