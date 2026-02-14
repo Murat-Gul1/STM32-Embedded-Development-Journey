@@ -1,0 +1,25 @@
+
+# Bu klasörler ve dosyalar her derlemede yeniden oluşur, GitHub'da yer kaplamasın.
+Debug/
+Release/
+bin/
+obj/
+*.elf
+*.bin
+*.hex
+*.map
+*.list
+*.o
+*.d
+*.su
+.settings/
+.metadata/
+.launches/
+*.launch
+*.tmp
+*.bak
+*~
+last_gen.log
+.DS_Store
+Thumbs.db
+Desktop.ini
