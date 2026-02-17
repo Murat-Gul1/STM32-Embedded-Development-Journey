@@ -65,3 +65,29 @@ if(counter == 4){
     }
     counter = 0; // Reset System
 }
+
+## 🔄 State Machine Flowchart
+
+```mermaid
+graph TD
+    A([Start / Reset]) --> B{Button Pressed?}
+    B -- No --> B
+    B -- Yes --> C{Counter Value?}
+    
+    C -- 0 --> D[Green LED ON]
+    C -- 1 --> E[Orange LED ON]
+    C -- 2 --> F[Red LED ON]
+    C -- 3 --> G[Blue LED ON]
+    C -- 4 --> H[Flash Animation Loop]
+    
+    D --> I[Wait 150ms & Counter++]
+    E --> I
+    F --> I
+    G --> I
+    
+    I --> B
+    
+    H --> J[Flash All LEDs x3]
+    J --> K[Reset Counter = 0]
+    K --> A
+```
