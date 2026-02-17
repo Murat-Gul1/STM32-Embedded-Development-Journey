@@ -1,4 +1,4 @@
-# 🎥 [Watch the Project Demo on YouTube](YOUTUBE_LINKINI_BURAYA_YAPISTIR](https://youtube.com/shorts/zWsYnL-X9fU?feature=share)
+# 🎥 [Watch the Project Demo on YouTube](https://youtube.com/shorts/zWsYnL-X9fU?feature=share)
 
 # STM32F4 Discovery - LED Counter & Flash Animation
 
