@@ -25,12 +25,12 @@ The system uses the **User Button (PA0)** to increment a counter. Based on the c
 
 ## ⚙️ Pin Configuration
 
-| Component       | Pin Name | GPIO Port | GPIO Pin  | Function |
-| **User Button** | `PA0`    | GPIOA     | PIN 0     | Input |
-| **Green LED**   | `PD12`   | GPIOD     | PIN 12    | Output |
-| **Orange LED**  | `PD13`   | GPIOD     | PIN 13    | Output |
-| **Red LED**     | `PD14`   | GPIOD     | PIN 14    | Output |
-| **Blue LED**    | `PD15`   | GPIOD     | PIN 15    | Output |
+| Component       | Pin Name | GPIO Port   | GPIO Pin    | Function |
+| **User Button** | PA0      | GPIOA       | PIN 0       | Input |
+| **Green LED**   | PD12     | GPIOD       | PIN 12      | Output |
+| **Orange LED**  | PD13     | GPIOD       | PIN 13      | Output |
+| **Red LED**     | PD14     | GPIOD       | PIN 14      | Output |
+| **Blue LED**    | PD15     | GPIOD       | PIN 15      | Output |
  
 ## 💻 Software & Tools
 
