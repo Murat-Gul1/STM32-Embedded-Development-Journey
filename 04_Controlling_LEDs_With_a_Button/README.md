@@ -66,6 +66,7 @@ if(counter == 4){
     counter = 0; // Reset System
 }
 
+```
 ## 🔄 State Machine Flowchart
 
 ```mermaid
