@@ -45,28 +45,3 @@ if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET){
         while(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET); 
     }
 }
-
-flowchart TD
-    Start([Start]) --> Closed
-
-    Closed -->|Button Pressed\n(PA0 == 1)| In_Line
-    In_Line -->|Button Pressed\n(PA0 == 1)| Flashing_Light
-    Flashing_Light -->|Button Pressed\n(PA0 == 1)| Flasher
-    Flasher -->|Button Pressed\n(PA0 == 1)| Closed
-
-    Closed:::state
-    In_Line:::state
-    Flashing_Light:::state
-    Flasher:::state
-
-    Closed_note["All LEDs OFF"]
-    In_Line_note["Sequential LEDs<br/>(Green → Orange → Red → Blue)"]
-    Flashing_note["Alternating LEDs<br/>(Green+Red → Orange+Blue)"]
-    Flasher_note["Flasher Animation<br/>(All LEDs ON → All LEDs OFF)"]
-
-    Closed --- Closed_note
-    In_Line --- In_Line_note
-    Flashing_Light --- Flashing_note
-    Flasher --- Flasher_note
-
-    classDef state fill:#f9f9f9,stroke:#333,stroke-width:1px;
