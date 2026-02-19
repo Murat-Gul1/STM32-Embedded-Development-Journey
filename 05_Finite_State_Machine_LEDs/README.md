@@ -26,22 +26,48 @@ The system starts in the `closed` state. Each valid button press transitions the
 The state transitions are managed using the following `StateNode` structure. Each node points to the function to execute (`Action execute`) and the next state in the loop (`struct StateNode *next`).
 
 ### State Structure
-```c
-typedef void(*Action)(void);
 
+typedef void(*Action)(void);
 typedef struct StateNode{
     Action execute;
     struct StateNode *next;
 } StateNode;
-
 Main Loop Logic
 The program continuously executes the current state's function (current_action->execute()). When a button press is detected (with debounce and release wait logic applied), the pointer simply moves to the next node:
 if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET){
     HAL_Delay(50); // Debounce delay
     if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET){
         current_action = current_action->next; // Move to the next state
-        
         // Wait until the user releases the button
         while(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET); 
     }
 }
+### LED State Machine (FSM)
+
+```mermaid
+stateDiagram-v2
+    [*] --> Closed : Start
+
+    Closed --> In_Line : Button Pressed (PA0 == 1)
+    In_Line --> Flashing_Light : Button Pressed (PA0 == 1)
+    Flashing_Light --> Flasher : Button Pressed (PA0 == 1)
+    Flasher --> Closed : Button Pressed (PA0 == 1)
+
+    note right of Closed
+        All LEDs OFF
+    end note
+
+    note right of In_Line
+        Sequential LEDs
+        (Green -> Orange -> Red -> Blue)
+    end note
+
+    note right of Flashing_Light
+        Alternating LEDs
+        (Green+Red -> Orange+Blue)
+    end note
+
+    note left of Flasher
+        Flasher Animation
+        (All LEDs ON -> All LEDs OFF)
+    end note
