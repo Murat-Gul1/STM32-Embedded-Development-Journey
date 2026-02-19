@@ -46,32 +46,27 @@ if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET){
     }
 }
 
-###LED State Machine (FSM)
+flowchart TD
+    Start([Start]) --> Closed
 
-```mermaid
-stateDiagram-v2
-    [*] --> Closed : Start
+    Closed -->|Button Pressed\n(PA0 == 1)| In_Line
+    In_Line -->|Button Pressed\n(PA0 == 1)| Flashing_Light
+    Flashing_Light -->|Button Pressed\n(PA0 == 1)| Flasher
+    Flasher -->|Button Pressed\n(PA0 == 1)| Closed
 
-    Closed --> In_Line : Button Pressed (PA0 == 1)
-    In_Line --> Flashing_Light : Button Pressed (PA0 == 1)
-    Flashing_Light --> Flasher : Button Pressed (PA0 == 1)
-    Flasher --> Closed : Button Pressed (PA0 == 1)
+    Closed:::state
+    In_Line:::state
+    Flashing_Light:::state
+    Flasher:::state
 
-    note right of Closed
-        All LEDs OFF
-    end note
+    Closed_note["All LEDs OFF"]
+    In_Line_note["Sequential LEDs<br/>(Green → Orange → Red → Blue)"]
+    Flashing_note["Alternating LEDs<br/>(Green+Red → Orange+Blue)"]
+    Flasher_note["Flasher Animation<br/>(All LEDs ON → All LEDs OFF)"]
 
-    note right of In_Line
-        Sequential LEDs
-        (Green -> Orange -> Red -> Blue)
-    end note
+    Closed --- Closed_note
+    In_Line --- In_Line_note
+    Flashing_Light --- Flashing_note
+    Flasher --- Flasher_note
 
-    note right of Flashing_Light
-        Alternating LEDs
-        (Green+Red -> Orange+Blue)
-    end note
-
-    note left of Flasher
-        Flasher Animation
-        (All LEDs ON -> All LEDs OFF)
-    end note
+    classDef state fill:#f9f9f9,stroke:#333,stroke-width:1px;
