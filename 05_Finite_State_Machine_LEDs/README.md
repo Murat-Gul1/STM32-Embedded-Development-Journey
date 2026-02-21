@@ -25,23 +25,6 @@ The system starts in the `closed` state. Each valid button press transitions the
 ## 💻 Software Architecture
 The state transitions are managed using the following `StateNode` structure. Each node points to the function to execute (`Action execute`) and the next state in the loop (`struct StateNode *next`).
 
-### State Structure
-
-typedef void(*Action)(void);
-typedef struct StateNode{
-    Action execute;
-    struct StateNode *next;
-} StateNode;
-Main Loop Logic
-The program continuously executes the current state's function (current_action->execute()). When a button press is detected (with debounce and release wait logic applied), the pointer simply moves to the next node:
-if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET){
-    HAL_Delay(50); // Debounce delay
-    if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET){
-        current_action = current_action->next; // Move to the next state
-        // Wait until the user releases the button
-        while(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET); 
-    }
-}
 ### LED State Machine (FSM)
 
 ```mermaid
