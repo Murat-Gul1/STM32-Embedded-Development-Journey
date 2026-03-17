@@ -1,13 +1,12 @@
 # STM32 & Nextion 
 ![Weapon Drawing Preview](gun.jpeg)
 
-A lightweight and fast C library developed to render hardware-level drawings (lines, circles, triangles) directly on Nextion TFT displays via UART using an STM32 microcontroller. It provides a solid foundation for creating and animating 2D game objects.
+
 
 ## 🚀 Purpose and Architectural Approach
 
 Nextion screens have limited built-in drawing capabilities. This library leverages the flexibility of C to construct complex shapes (e.g., a stickman or a fully equipped weapon) by chaining together basic geometric primitives (`Line`, `Circle`, `Triangle`).
 
-During development, the biggest challenge we faced was **"Animation and Movement"** management. We solved this by adapting the **Prefab (Composite Object)** architecture, commonly used in modern game engines, for embedded systems.
 
 ### 💡 Highlight Feature: Relative Drawing (Offset) Logic
 
