@@ -42,8 +42,8 @@ In this initial release, **Polling Mode** (`HAL_DMA_PollForTransfer`) is used to
 ---
 *Developed as part of a personal project exploring high-speed embedded communication.*
 ![Project Showcase](6.png)
-![Wiring Diagram](5.png)(5.png)
-![Pin Definition](4.png)(4.png)
-![Alternate Function Mapping](3.png)(3.png)
-![USART Register Map](2.png)(2.png)
+![Wiring Diagram](5.png)
+![Pin Definition](4.png)
+![Alternate Function Mapping](3.png)
+![USART Register Map](2.png)
 ![DMA Request Mapping](1.png)
