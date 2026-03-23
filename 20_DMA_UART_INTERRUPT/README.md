@@ -43,4 +43,4 @@ The UART's DMAT bit is set (USART_CR3_DMAT |= 1) to request data from the DMA.
 The CPU remains free while the DMA sends the message "HELLO STM32".
 
 Once finished, the interrupt fires, calling the Handler in it.c, which then triggers the user callback to light up the LED.
-[](1.png)
+![](1.png)
