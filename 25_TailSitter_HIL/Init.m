@@ -1,0 +1,16 @@
+m = 0.5;
+g = 9.81;
+Ub = 11.1;
+KV = 1400;
+max_rpm = KV *Ub;
+c_T = 1.105e-5;
+c_M = 1.779e-7;
+d = 0.25;
+l = d * 0.707;
+M_alloc = [  c_T,     c_T,     c_T,     c_T ;
+            -l*c_T,   l*c_T,   l*c_T,  -l*c_T ;
+             l*c_T,  -l*c_T,   l*c_T,  -l*c_T ;
+             c_M,    -c_M,     c_M,    -c_M ];
+Ixx = 0.005;
+Iyy = 0.005;
+Izz = 0.009;
