@@ -1,6 +1,6 @@
 # TailSitter HIL (Hardware-in-the-Loop) Simulation
 
-# 🎥 [Watch the Project Demo on YouTube](https://youtu.be/rT9PUDNewhAhttps://youtu.be/i36wjRwoYaM)
+# 🎥 [Watch the Project Demo on YouTube](https://youtu.be/i36wjRwoYaM)
 This project is a Hardware-in-the-Loop (HIL) simulation for a TailSitter Drone (a vertical takeoff and landing UAV), developed using an STM32F407VGTX microcontroller and MATLAB/Simulink.
 
 ## Overview
