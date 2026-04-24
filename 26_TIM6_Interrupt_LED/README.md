@@ -1,4 +1,3 @@
-## 🎮 Input Filtering & The Game Loop
 # 🎥 [Watch the Project Demo on YouTube](https://youtube.com/shorts/xde5tDRIafE)
 # STM32F407 Discovery - TIM6 Basic Timer Interrupt Project
 
