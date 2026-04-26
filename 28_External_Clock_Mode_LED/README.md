@@ -38,10 +38,10 @@ $$f_{UEV} = \frac{16,000,000}{1,000 \times 8,000} = 2 \text{ Hz}$$
 
 ## ⚙️ CubeMX Configuration
 1. **RCC:** Enable `Master Clock Output 1`, select `HSI` as the source.
-2. **TIM3:** - `Slave Mode`: External Clock Mode 2
-   - `Trigger Source`: ETR2
-   - `Prescaler`: 999
-   - `Period`: 7999
+2. **TIM3:** - **Slave Mode:** Disabled -> *ETR Mode 2 does not require the slave controller.*
+   - **Clock Source:** ETR2 (Selecting this enables External Clock Mode 2).
+   - **Prescaler:** 999
+   - **Counter Period (ARR):** 7999
 3. **NVIC:** Check `TIM3 global interrupt` Enabled.
 4. **GPIO:** Set PA8 output speed to `Very High`.
 
