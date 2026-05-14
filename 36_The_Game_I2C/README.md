@@ -49,8 +49,5 @@ A real-time space shooter game developed for the **STM32F407 Discovery** board u
 - **System Freeze:** Solved by increasing ADC sampling time from 3 to 480 cycles to reduce Bus Matrix congestion.
 - **Drawing Artifacts:** Solved by correctly configuring the SSD1306 memory addressing mode for DMA packets.
 
-## 🎥 Screenshots
-*(Add your game screenshots here)*
-
 ---
 Developed as a deep-dive into STM32 HAL, DMA, and real-time game logic.
